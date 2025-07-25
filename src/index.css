@@ -1,7 +1,168 @@
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif;
-  margin: auto;
-  max-width: 38rem;
-  padding: 2rem;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  font-family: 'Courier New', monospace;
+  background-image: url('./assets/theme/default/defaultBackground\ .png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  background: #00ff88;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background: #00c86b;
+  transform: translateY(-2px);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  max-width: 500px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+/* ------------------------
+   | Sprites and Chat Box |
+   ------------------------ */
+.duck-container {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.duck {
+  position: absolute;
+  right: -60px;
+  top: 15px;
+  background-image: url('./assets/theme/default/sprites/idle.png');
+  background-size: 256px 512px;
+  background-repeat: no-repeat;
+  background-position: 0 0; 
+  width: 256px;
+  height: 256px;
+  margin-bottom: 20px;
+  image-rendering: pixelated;
+  overflow: hidden;
+  animation: duckIdle 1.5s steps(2) infinite; 
+}
+
+.duck.thinking {
+  background-image: url('./assets/theme/default/sprites/thinking.png');
+  background-size: 512px 512px;
+  animation: duckThinking 2s step-start infinite;
+}
+
+.duck.sleeping {
+  background-image: url('./assets/theme/default/sprites/sleeping.png');
+  background-size: 512px 512px;
+  animation: duckSleeping 3s step-start infinite;
+}
+
+.duck-speech {
+  background: white;
+  border: 3px solid #333;
+  border-radius: 15px;
+  padding: 12px;
+  max-width: 250px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.duck-speech::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  right: -9px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #333;
+  transform: rotate(135deg);
+}
+
+/* ---------------------
+   | User chat section |
+   --------------------- */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.input-container {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.bug-input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.celebration-btn {
+  background: #e169ff;
+}
+
+.celebration-btn:hover {
+  background: #b856d0;
+}
+
+/* --------------
+   | Animations |
+   -------------- */
+@keyframes duckIdle {
+  0% { background-position: 0 0; }
+  100% { background-position: 0px -512px; }
+}
+
+@keyframes duckThinking {
+  0%   { background-position: 0 0; }
+  25%  { background-position: -256px 0; }
+  50%  { background-position: 0 -256px; }
+  75%  { background-position: -256px -256px; }
+  100% { background-position: 0 0; }
+}
+
+@keyframes duckSleeping {
+  0%   { background-position: 0 0; }
+  25%  { background-position: -256px 0; }
+  50%  { background-position: 0 -256px; }
+  75%  { background-position: -256px -256px; }
+  100% { background-position: 0 0; }
+}
+
