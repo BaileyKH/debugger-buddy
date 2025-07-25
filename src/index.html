@@ -2,11 +2,30 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
-
+    <title>Bug Buddy</title>
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+    <main class="main-container">
+      <div class="duck-container">
+        <div class="duck" id="duck"></div>
+        <div class="duck-speech" id="duck-speech">
+          Hi! I'm your debugging buddy! Tell me what's got you stuck
+        </div>
+      </div>
+      
+      <div class="chat-container">
+        <div class="input-container">
+          <input id="bug-input" class="bug-input" type="text" placeholder="Describe your bug here..."/>
+          <button id="chat-btn">Chat</button>
+        </div>
+        
+        <div class="controls">
+          <button id="solved-btn" class="celebration-btn">I solved it!</button>
+        </div>
+      </div>
+    </main>
+    
+    <script src="renderer.js"></script>
   </body>
 </html>
