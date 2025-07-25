@@ -1,8 +1,8 @@
 {
   "name": "debugger-buddy",
-  "productName": "debugger-buddy",
+  "productName": "Bug Buddy",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Rubber duck debugging has been known to help so many developers conquer those 3am bugs where you are only thriving on energy drinks and a sliver of will to live, but lets be real, it would be kind of cool if it talked back once and a while.",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
